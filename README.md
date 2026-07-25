@@ -90,7 +90,59 @@ security-incident-asset-tracker/
 ├── AssetDAO.java
 ...
 ```
+---
+##  Screenshots
 
+### Database Setup
+
+![Database schema created in MariaDB](./docs/screenshots/database-schema.png)
+
+
+### Application in Action
+
+
+![Adding a new asset](./docs/screenshots/add-asset.png)
+
+
+
+
+
+![Viewing all assets](./docs/screenshots/view-assets.png)
+
+
+
+
+
+![Viewing assets after multiple entries](./docs/screenshots/view-assets(2).png)
+
+
+
+![Reporting a security incident](./docs/screenshots/report-incident.png)
+
+
+
+
+
+![Filtering open incidents by severity](./docs/screenshots/filter-severity.png)
+
+
+
+
+
+![Resolving an incident](./docs/screenshots/resolve-incident.png)
+
+
+
+
+
+![Incident status updated to Resolved](./docs/screenshots/view-incident-resolved.png)
+
+
+
+
+
+![Foreign key constraint protecting linked records](./docs/screenshots/foreign-key-constraint.png)
+---
 ---
 
 ##  How to Run
@@ -151,4 +203,3 @@ This project is licensed under the MIT License — see the [LICENSE](./LICENSE) 
 
 ---
 
-*Developed with guidance from an AI assistant (Claude) for debugging, structuring, and documentation. Implementation, testing, and understanding of the code are my own.*
