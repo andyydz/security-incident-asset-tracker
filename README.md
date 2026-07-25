@@ -79,13 +79,16 @@ Full definition: [`schema.sql`](./schema.sql)
 
 ```
 security-incident-asset-tracker/
-├── DBConnection.java     # Handles the database connection
-├── AssetDAO.java         # CRUD operations for the Assets table
-├── IncidentDAO.java      # CRUD operations for the Incidents table
-├── SecurityTracker.java  # Console menu / application entry point
-├── schema.sql            # Database schema (tables + relationships)
-├── LICENSE                # MIT License
-└── README.md
+├── docs/
+│   ├── Project_Proposal.pdf
+│   └── screenshots/
+│       ├── db-tables-created.png
+│       ├── add-asset.png
+│       ├── view-assets.png
+│       └── ... etc
+├── DBConnection.java
+├── AssetDAO.java
+...
 ```
 
 ---
