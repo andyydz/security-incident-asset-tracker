@@ -1,4 +1,4 @@
-cat > ~/security-incident-asset-tracker/schema.sql << 'EOF'
+
 CREATE DATABASE SecurityDB;
 USE SecurityDB;
 
@@ -20,4 +20,4 @@ CREATE TABLE Incidents (
     resolved_date DATE,
     FOREIGN KEY (asset_id) REFERENCES Assets(asset_id)
 );
-EOF
+
