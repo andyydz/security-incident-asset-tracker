@@ -172,34 +172,47 @@ security-incident-asset-tracker/
 ##  How to Run
 
 **1. Set up the database**
+
+Ensure MariaDB is installed and running, then execute:
+
 ```bash
 mysql -u root -p < schema.sql
 ```
 
-**2. Configure credentials**
+**2. Configure database environment variables**
 
-Update the database URL, username, and password in `DBConnection.java` to match your local MariaDB setup.
+Set these variables to match your local MariaDB setup. Do not commit database passwords to GitHub.
 
-**3. Compile and run**
 ```bash
-javac *.java
-java -cp .:/path/to/mariadb-java-client.jar SecurityTracker
+export DB_URL="jdbc:mariadb://localhost:3306/SecurityDB"
+export DB_USER="your_mariadb_username"
+export DB_PASSWORD="your_mariadb_password"
 ```
 
-**4. Use the console menu**
+Replace the example username and password with your local credentials.
+
+**3. Compile the Java files**
+
+From the project root, create the package directory and compile the source files into it:
+
+```bash
+mkdir -p securitytracker
+javac -cp ".:/path/to/mariadb-java-client.jar" -d . DBConnection.java AssetDAO.java IncidentDAO.java SecurityTracker.java
 ```
---- Security Incident & Asset Tracker ---
-1. Add Asset
-2. View Assets
-3. Update Asset Owner
-4. Delete Asset
-5. Report Incident
-6. View All Incidents
-7. View Open Incidents by Severity
-8. Resolve Incident
-9. Delete Incident
-0. Exit
+
+Replace `/path/to/mariadb-java-client.jar` with the actual path to your MariaDB Connector/J JAR file.
+
+**4. Run the application**
+
+```bash
+java -cp ".:/path/to/mariadb-java-client.jar" securitytracker.SecurityTracker
 ```
+
+Use the same actual JAR path in the runtime classpath.
+
+**5. Use the console menu**
+
+The application provides options to add, view, update, and delete assets; report, view, filter, resolve, and delete incidents; and exit the application.
 
 ---
 
