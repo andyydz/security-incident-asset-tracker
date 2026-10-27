@@ -1,7 +1,10 @@
-CREATE DATABASE SecurityDB;
+-- Create the database if it does not already exist.
+CREATE DATABASE IF NOT EXISTS SecurityDB;
+
 USE SecurityDB;
 
-CREATE TABLE Assets (
+-- Create the Assets table if it does not already exist.
+CREATE TABLE IF NOT EXISTS Assets (
     asset_id INT AUTO_INCREMENT PRIMARY KEY,
     asset_name VARCHAR(100) NOT NULL,
     asset_type VARCHAR(50),
@@ -9,7 +12,8 @@ CREATE TABLE Assets (
     location VARCHAR(100)
 );
 
-CREATE TABLE Incidents (
+-- Create the Incidents table if it does not already exist.
+CREATE TABLE IF NOT EXISTS Incidents (
     incident_id INT AUTO_INCREMENT PRIMARY KEY,
     asset_id INT,
     description VARCHAR(255),
@@ -19,4 +23,3 @@ CREATE TABLE Incidents (
     resolved_date DATE,
     FOREIGN KEY (asset_id) REFERENCES Assets(asset_id)
 );
-
