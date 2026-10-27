@@ -1,4 +1,3 @@
-
 CREATE DATABASE SecurityDB;
 USE SecurityDB;
 
